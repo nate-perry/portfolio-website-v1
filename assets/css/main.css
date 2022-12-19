@@ -33,6 +33,13 @@ body {
 	line-height: 1;
 }
 
+.card696969 {
+	height: 400px;
+	width: 100%;
+	background-image: url("./images/headshot.jpg");
+	background-color: #222;
+}
+
 ol, ul {
 	list-style: none;
 }
@@ -2187,6 +2194,8 @@ input, select, textarea {
 				width: 100%;
 			}
 
+
+			
 		.image.avatar {
 			border-radius: 100%;
 			overflow: hidden;
@@ -2197,6 +2206,14 @@ input, select, textarea {
 				display: block;
 				width: 100%;
 			}
+
+
+
+			.image.avatar.hover_img {
+				border-radius: 100%;
+				display: block;
+				width: 100%;
+			} 
 
 		.image.main {
 			display: block;
