@@ -78,6 +78,14 @@ export function CommandPalette() {
         external: true,
       },
       {
+        id: "ext-geo",
+        group: "Links",
+        label: "Open geo.nrperry.com",
+        icon: Sparkles,
+        run: openUrl(profile.geo),
+        external: true,
+      },
+      {
         id: "ext-github",
         group: "Links",
         label: "GitHub · nate-perry",
@@ -190,7 +198,7 @@ export function CommandPalette() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -6, scale: 0.98 }}
             transition={{ duration: 0.18, ease: "easeOut" }}
-            className="relative w-full max-w-xl overflow-hidden rounded-2xl border border-line-strong bg-card shadow-2xl"
+            className="relative w-full max-w-xl overflow-hidden rounded-3xl border border-line-strong bg-card shadow-2xl"
           >
             <div className="flex items-center gap-2 border-b border-line px-4 py-3">
               <Search className="h-4 w-4 text-muted" />

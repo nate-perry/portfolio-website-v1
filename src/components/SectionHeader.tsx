@@ -1,37 +1,43 @@
 import type { ReactNode } from "react";
+import { Squiggle } from "./Doodles";
 
 export function SectionHeader({
-  index,
   eyebrow,
   title,
+  titleAccent,
   description,
   children,
 }: {
-  index?: string;
   eyebrow: string;
   title: string;
+  titleAccent?: string;
   description?: string;
   children?: ReactNode;
 }) {
   return (
-    <div className="mb-12 grid grid-cols-1 items-end gap-6 border-b border-line pb-6 md:grid-cols-[auto_1fr_auto] md:gap-10">
-      <div>
-        <div className="label flex items-center gap-3">
-          {index ? <span className="text-accent">{index}</span> : null}
-          <span>{eyebrow}</span>
-        </div>
-        <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">
-          {title}
-        </h2>
+    <div className="mb-14 flex flex-col items-start gap-5">
+      <div className="inline-flex items-center gap-3">
+        <Squiggle className="h-3 w-12 text-accent" />
+        <span className="label text-accent">{eyebrow}</span>
+        <Squiggle className="h-3 w-12 text-accent" />
       </div>
+      <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+        {title}
+        {titleAccent ? (
+          <>
+            {" "}
+            <span className="serif italic font-normal text-accent">
+              {titleAccent}
+            </span>
+          </>
+        ) : null}
+      </h2>
       {description ? (
-        <p className="max-w-md text-sm leading-relaxed text-muted md:ml-auto">
+        <p className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg">
           {description}
         </p>
-      ) : (
-        <div />
-      )}
-      {children ? <div>{children}</div> : null}
+      ) : null}
+      {children}
     </div>
   );
 }
