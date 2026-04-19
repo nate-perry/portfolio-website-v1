@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "cleanUrls": true,
+  "redirects": [
+    { "source": "/resume", "destination": "/Nathan-Perry-Resume.pdf", "permanent": false }
+  ]
+}

@@ -1,0 +1,78 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 250 250 250;
+  --foreground: 14 14 18;
+  --muted: 120 120 130;
+  --border: 226 232 240;
+  --card: 255 255 255;
+  --accent: 37 102 244;
+}
+
+.dark {
+  --background: 8 10 16;
+  --foreground: 240 242 248;
+  --muted: 148 158 178;
+  --border: 36 42 56;
+  --card: 14 17 25;
+  --accent: 96 170 255;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: rgb(var(--background));
+  color: rgb(var(--foreground));
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+::selection {
+  background-color: rgba(59, 135, 255, 0.25);
+  color: inherit;
+}
+
+@layer utilities {
+  .text-muted {
+    color: rgb(var(--muted));
+  }
+  .bg-surface {
+    background-color: rgb(var(--card));
+  }
+  .border-subtle {
+    border-color: rgb(var(--border));
+  }
+  .gradient-text {
+    background-image: linear-gradient(
+      120deg,
+      #60aaff 0%,
+      #3b87ff 35%,
+      #8b5cf6 70%,
+      #ec4899 100%
+    );
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: gradient-x 12s ease infinite;
+  }
+  .glass {
+    background-color: rgb(var(--card) / 0.6);
+    backdrop-filter: saturate(180%) blur(12px);
+    -webkit-backdrop-filter: saturate(180%) blur(12px);
+    border: 1px solid rgb(var(--border));
+  }
+  .grid-bg {
+    background-image:
+      linear-gradient(rgb(var(--border) / 0.5) 1px, transparent 1px),
+      linear-gradient(90deg, rgb(var(--border) / 0.5) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 30%, transparent 80%);
+    mask-image: radial-gradient(ellipse 60% 60% at 50% 0%, black 30%, transparent 80%);
+  }
+}
