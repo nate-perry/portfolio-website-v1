@@ -22,11 +22,10 @@ export function Stack() {
         accent="var(--c-teal)"
         title={
           <>
-            The tools behind what I{" "}
-            <span style={{ color: "rgb(var(--c-teal))" }}>build</span>.
+            What I{" "}
+            <span style={{ color: "rgb(var(--c-teal))" }}>use</span>.
           </>
         }
-        description="What I've shipped production systems with — plus the certifications that back them."
       />
 
       <div className="space-y-4">

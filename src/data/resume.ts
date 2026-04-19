@@ -7,7 +7,7 @@ export const profile = {
   email: "nathanperry@randdgroup.com",
   phone: "443-377-2222",
   summary:
-    "Software engineer at AWS working on Edge Services, with a background in cloud, geospatial, and secure distributed systems. I like building scalable infrastructure, well-designed APIs, and shipping products that people actually use.",
+    "Software engineer at AWS building cloud & edge systems.",
   socials: {
     github: "https://github.com/nate-perry",
     linkedin: "https://www.linkedin.com/in/nathanperry443/",

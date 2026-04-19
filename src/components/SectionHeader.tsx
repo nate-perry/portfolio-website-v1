@@ -14,7 +14,7 @@ export function SectionHeader({
   accent?: string;
 }) {
   return (
-    <div className="mb-12 flex flex-col items-start gap-4">
+    <div className="mb-10 flex flex-col items-start gap-4">
       <div className="inline-flex items-center gap-2.5">
         <span
           aria-hidden

@@ -24,8 +24,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-sm text-xs text-muted">
-              © {year} Nathan Perry. Designed &amp; built with Next.js,
-              Tailwind, and Framer Motion. Hosted on Vercel.
+              © {year} · Next.js &amp; Vercel.
             </p>
           </div>
           <div>

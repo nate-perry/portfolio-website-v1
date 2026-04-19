@@ -24,11 +24,10 @@ export function Projects() {
         accent="var(--c-pink)"
         title={
           <>
-            Side projects, products, and{" "}
-            <span style={{ color: "rgb(var(--c-pink))" }}>experiments</span>.
+            Things I&apos;m{" "}
+            <span style={{ color: "rgb(var(--c-pink))" }}>building</span>.
           </>
         }
-        description="A rotating mix of products I'm building, weekend experiments, and tools I wanted to exist."
       />
 
       <div className="grid grid-cols-1 gap-5 md:grid-cols-6">

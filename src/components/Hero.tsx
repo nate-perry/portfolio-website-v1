@@ -98,8 +98,7 @@ export function Hero() {
           >
             Software engineer at{" "}
             <span className="font-medium text-[rgb(var(--fg))]">AWS</span>{" "}
-            working on Edge Services. I build scalable cloud infrastructure,
-            secure distributed systems, and the occasional iOS app.
+            building cloud &amp; edge systems.
           </motion.p>
 
           <motion.div

@@ -5,7 +5,7 @@ const facts = [
   { k: "Team", v: "AWS · Edge Services", c: "var(--c-violet)" },
   { k: "Base", v: "Arlington, VA", c: "var(--c-teal)" },
   { k: "Focus", v: "Cloud · Edge · GIS", c: "var(--c-orange)" },
-  { k: "Studied", v: "UMD · CS + GIS minor", c: "var(--c-pink)" },
+  { k: "Studied", v: "UMD · CS + GIS", c: "var(--c-pink)" },
   { k: "Status", v: "Open to collab", c: "var(--c-amber)" },
 ];
 
@@ -20,34 +20,32 @@ export function About() {
         accent="var(--c-violet)"
         title={
           <>
-            A cloud engineer focused on{" "}
+            Building{" "}
             <span style={{ color: "rgb(var(--c-violet))" }}>
               reliable infrastructure
-            </span>{" "}
-            and well-designed APIs.
+            </span>
+            .
           </>
         }
-        description="The short version — I care about infra that's reliable, APIs that are pleasant, and shipping products that people actually use."
       />
 
       <div className="grid grid-cols-1 gap-6 lg:grid-cols-[1.2fr_1fr]">
         <div className="rounded-2xl border border-line bg-card p-8 text-base leading-relaxed text-subtle">
           <p>
-            I got into software through GIS — starting at Anne Arundel
-            Community College, then a CS degree with a Geospatial Information
-            Sciences minor at Maryland. At UMD I built interactive campus
-            mapping tools used daily by thousands of students.
+            I got into software through GIS at UMD, where I built campus
+            mapping tools used by thousands of students daily.
           </p>
           <p className="mt-4">
-            I spent two years on AWS&apos;s National Security Practice building
-            secure serverless geospatial APIs, ETL pipelines at scale, and
-            reusable cloud building blocks adopted across 10+ internal teams.
-            I&apos;m now on <strong className="text-[rgb(var(--fg))] font-medium">AWS Edge Services</strong>
-            {" "}shipping control-plane APIs, encrypted data-plane paths, and
-            central config management for edge-deployed hardware.
+            I spent two years at AWS on the National Security Practice — secure
+            serverless geospatial APIs, ETL at scale, and reusable cloud
+            building blocks. I&apos;m now on{" "}
+            <strong className="font-medium text-[rgb(var(--fg))]">
+              AWS Edge Services
+            </strong>
+            , shipping control-plane APIs and config infra for edge hardware.
           </p>
           <p className="mt-4">
-            Outside the day job I&apos;m building{" "}
+            On the side I&apos;m building{" "}
             <a
               href="https://app.setlistapp.org"
               target="_blank"
@@ -56,14 +54,14 @@ export function About() {
             >
               Setlist
             </a>
-            , a live-music discovery platform. More at{" "}
+            , plus{" "}
             <a
               href="https://rfp.nrperry.com"
               target="_blank"
               rel="noreferrer"
               className="font-medium text-[rgb(var(--fg))] underline decoration-[rgb(var(--c-violet))] decoration-2 underline-offset-4"
             >
-              rfp.nrperry.com
+              rfp
             </a>{" "}
             and{" "}
             <a
@@ -72,7 +70,7 @@ export function About() {
               rel="noreferrer"
               className="font-medium text-[rgb(var(--fg))] underline decoration-[rgb(var(--c-teal))] decoration-2 underline-offset-4"
             >
-              geo.nrperry.com
+              geo
             </a>
             .
           </p>
