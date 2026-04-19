@@ -15,6 +15,7 @@ export const profile = {
     website: "https://www.nrperry.com",
   },
   rfp: "https://rfp.nrperry.com",
+  geo: "https://geo.nrperry.com",
   headshot: "/images/headshot.jpg",
   heroImage: "/images/iribe.jpg",
 };

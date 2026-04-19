@@ -1,12 +1,13 @@
 import { SectionHeader } from "./SectionHeader";
+import { Star } from "./Doodles";
 
 const facts = [
-  { k: "Role", v: "Software Engineer" },
-  { k: "Team", v: "AWS Edge Services" },
-  { k: "Base", v: "Arlington, VA" },
-  { k: "Interests", v: "Cloud · Edge · Geospatial · iOS" },
-  { k: "Schooled", v: "UMD · CS + GIS minor" },
-  { k: "Available", v: "For side collab" },
+  { k: "role", v: "Software Engineer" },
+  { k: "team", v: "AWS · Edge Services" },
+  { k: "base", v: "Arlington, VA" },
+  { k: "likes", v: "Cloud · Edge · GIS · iOS" },
+  { k: "studied", v: "UMD · CS + GIS minor" },
+  { k: "vibe", v: "Down to build" },
 ];
 
 export function About() {
@@ -16,29 +17,34 @@ export function About() {
       className="content-wrap mx-auto max-w-6xl px-5 py-24 sm:py-32"
     >
       <SectionHeader
-        index="02"
-        eyebrow="About"
-        title="Cloud engineer, GIS nerd, iOS hobbyist."
-        description="I work on the infrastructure under products that run at scale. Day job is Edge Services at AWS; side projects tend to mix location, data, and anything that puts pixels on a phone."
+        eyebrow="about"
+        title="a cloud engineer who also likes"
+        titleAccent="making things pretty."
+        description="The short version: I care about infra that's reliable and tools that feel good to use. Here's the slightly longer version."
       />
 
-      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1fr]">
-        <div className="space-y-6 text-base leading-relaxed text-subtle">
+      <div className="grid grid-cols-1 gap-8 lg:grid-cols-[1.2fr_1fr]">
+        <div className="paper relative rounded-3xl border border-line p-8 text-base leading-relaxed text-subtle">
+          <Star className="absolute right-6 top-6 h-4 w-4 text-accent animate-wiggle" />
           <p>
-            I got into software through GIS — starting at Anne Arundel CC, then a
-            CS degree and Geospatial Information Sciences minor at Maryland. At
-            UMD I built interactive campus mapping tools used by thousands of
-            students daily.
+            I got into software through GIS — starting at Anne Arundel
+            Community College, then a CS degree with a Geospatial Information
+            Sciences minor at Maryland. At UMD I built interactive campus
+            mapping tools used by thousands of students every day.
           </p>
-          <p>
-            At AWS I spent two years on the National Security Practice building
-            secure serverless geospatial APIs, ETL at scale, and reusable cloud
-            building blocks adopted across 10+ teams. I&apos;m now on Edge
-            Services, shipping control-plane APIs, encrypted data-plane paths,
-            and a central config service for edge-deployed hardware.
+          <p className="mt-4">
+            I spent two years on AWS&apos;s National Security Practice building
+            secure serverless geospatial APIs, ETL pipelines at scale, and
+            reusable cloud building blocks adopted across 10+ internal teams.
+            I&apos;m now on{" "}
+            <span className="font-medium text-[rgb(var(--fg))]">
+              AWS Edge Services
+            </span>{" "}
+            shipping control-plane APIs, encrypted data-plane paths, and
+            central config for edge-deployed hardware.
           </p>
-          <p>
-            Outside the day job I&apos;m building{" "}
+          <p className="mt-4">
+            Outside the day job, I&apos;m building{" "}
             <a
               href="https://app.setlistapp.org"
               target="_blank"
@@ -47,24 +53,42 @@ export function About() {
             >
               Setlist
             </a>
-            , a live-music discovery platform, and I maintain a SwiftUI interval
-            timer on the App Store.
+            , a live-music discovery platform, and I maintain a SwiftUI
+            interval timer on the App Store with a 5★ rating. More to come at{" "}
+            <a
+              href="https://rfp.nrperry.com"
+              target="_blank"
+              rel="noreferrer"
+              className="link-underline text-[rgb(var(--fg))]"
+            >
+              rfp.nrperry.com
+            </a>{" "}
+            and{" "}
+            <a
+              href="https://geo.nrperry.com"
+              target="_blank"
+              rel="noreferrer"
+              className="link-underline text-[rgb(var(--fg))]"
+            >
+              geo.nrperry.com
+            </a>
+            .
           </p>
         </div>
 
-        <dl className="grid grid-cols-2 overflow-hidden rounded-xl border border-line">
+        <ul className="grid grid-cols-2 gap-3">
           {facts.map((f, i) => (
-            <div
+            <li
               key={f.k}
-              className={`flex flex-col justify-between gap-4 border-line p-5 ${
-                i % 2 === 0 ? "border-r" : ""
-              } ${i < facts.length - 2 ? "border-b" : ""}`}
+              className={`dashed-card flex flex-col justify-between gap-6 p-5 transition hover:border-accent ${
+                i % 3 === 1 ? "rotate-[-1deg]" : ""
+              } ${i % 3 === 2 ? "rotate-[1deg]" : ""}`}
             >
-              <dt className="label">{f.k}</dt>
-              <dd className="mono text-sm">{f.v}</dd>
-            </div>
+              <span className="label">{f.k}</span>
+              <span className="text-sm font-medium">{f.v}</span>
+            </li>
           ))}
-        </dl>
+        </ul>
       </div>
     </section>
   );
