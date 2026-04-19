@@ -1,11 +1,12 @@
 import { About } from "@/components/About";
+import { Contact } from "@/components/Contact";
 import { Education } from "@/components/Education";
-import { Experience } from "@/components/Experience";
 import { Footer } from "@/components/Footer";
 import { Hero } from "@/components/Hero";
 import { Navbar } from "@/components/Navbar";
 import { Projects } from "@/components/Projects";
-import { Skills } from "@/components/Skills";
+import { Stack } from "@/components/Stack";
+import { Work } from "@/components/Work";
 
 export default function HomePage() {
   return (
@@ -14,10 +15,11 @@ export default function HomePage() {
       <main>
         <Hero />
         <About />
-        <Experience />
+        <Work />
         <Projects />
         <Education />
-        <Skills />
+        <Stack />
+        <Contact />
       </main>
       <Footer />
     </>

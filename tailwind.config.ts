@@ -6,36 +6,31 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-inter)", "system-ui", "sans-serif"],
-        mono: ["var(--font-jetbrains)", "ui-monospace", "monospace"],
+        sans: ["var(--font-geist-sans)", "system-ui", "sans-serif"],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
+      },
+      fontSize: {
+        display: ["clamp(2.75rem, 8vw, 7.5rem)", { lineHeight: "0.95", letterSpacing: "-0.04em" }],
       },
       colors: {
-        brand: {
-          50: "#eff8ff",
-          100: "#dbeefe",
-          200: "#bfdffe",
-          300: "#93caff",
-          400: "#60aaff",
-          500: "#3b87ff",
-          600: "#2566f4",
-          700: "#1d52e0",
-          800: "#1f44b5",
-          900: "#1f3d8e",
-          950: "#162659",
+        accent: {
+          DEFAULT: "#3b87ff",
+          soft: "#60aaff",
         },
       },
       animation: {
-        "gradient-x": "gradient-x 12s ease infinite",
-        "fade-in": "fade-in 0.6s ease-out forwards",
+        marquee: "marquee 40s linear infinite",
+        "marquee-reverse": "marquee 40s linear infinite reverse",
+        "pulse-soft": "pulse-soft 2.4s cubic-bezier(0.4, 0, 0.6, 1) infinite",
       },
       keyframes: {
-        "gradient-x": {
-          "0%, 100%": { "background-position": "0% 50%" },
-          "50%": { "background-position": "100% 50%" },
+        marquee: {
+          "0%": { transform: "translateX(0)" },
+          "100%": { transform: "translateX(-50%)" },
         },
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(8px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" },
+        "pulse-soft": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0.5" },
         },
       },
     },

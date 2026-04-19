@@ -1,20 +1,10 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, JetBrains_Mono } from "next/font/google";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import { ThemeProvider } from "@/components/ThemeProvider";
+import { CommandPalette } from "@/components/CommandPalette";
 import { profile } from "@/data/resume";
 import "./globals.css";
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const jetbrains = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-jetbrains",
-  display: "swap",
-});
 
 const siteUrl = "https://www.nrperry.com";
 
@@ -61,7 +51,7 @@ export const viewport: Viewport = {
   initialScale: 1,
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#fafafa" },
-    { media: "(prefers-color-scheme: dark)", color: "#080a10" },
+    { media: "(prefers-color-scheme: dark)", color: "#08090b" },
   ],
 };
 
@@ -72,10 +62,13 @@ export default function RootLayout({
     <html
       lang="en"
       suppressHydrationWarning
-      className={`${inter.variable} ${jetbrains.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable}`}
     >
       <body className="font-sans">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <CommandPalette />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );

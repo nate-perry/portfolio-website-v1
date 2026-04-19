@@ -1,68 +1,70 @@
 import { SectionHeader } from "./SectionHeader";
 
-const highlights = [
-  {
-    label: "Based in",
-    value: "Arlington, VA",
-  },
-  {
-    label: "Currently",
-    value: "AWS · Edge Services",
-  },
-  {
-    label: "Interests",
-    value: "Cloud · Edge · Geospatial · iOS",
-  },
-  {
-    label: "Education",
-    value: "UMD · CS + GIS minor",
-  },
+const facts = [
+  { k: "Role", v: "Software Engineer" },
+  { k: "Team", v: "AWS Edge Services" },
+  { k: "Base", v: "Arlington, VA" },
+  { k: "Interests", v: "Cloud · Edge · Geospatial · iOS" },
+  { k: "Schooled", v: "UMD · CS + GIS minor" },
+  { k: "Available", v: "For side collab" },
 ];
 
 export function About() {
   return (
-    <section id="about" className="mx-auto max-w-6xl px-4 py-24">
+    <section
+      id="about"
+      className="content-wrap mx-auto max-w-6xl px-5 py-24 sm:py-32"
+    >
       <SectionHeader
+        index="02"
         eyebrow="About"
-        title="A little about me"
-        description="I'm a software engineer at AWS, currently on the Edge Services team. I like the intersection of cloud infrastructure and secure distributed systems — building things that work reliably at scale and are pleasant to use."
+        title="Cloud engineer, GIS nerd, iOS hobbyist."
+        description="I work on the infrastructure under products that run at scale. Day job is Edge Services at AWS; side projects tend to mix location, data, and anything that puts pixels on a phone."
       />
-      <div className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-2xl border border-subtle bg-surface p-6 leading-relaxed text-muted">
+
+      <div className="grid grid-cols-1 gap-10 lg:grid-cols-[1fr_1fr]">
+        <div className="space-y-6 text-base leading-relaxed text-subtle">
           <p>
-            Before AWS, I studied Computer Science and Geospatial Information
-            Sciences at the University of Maryland. That background pulls me
-            toward problems where data, location, and systems intersect —
-            geospatial APIs, sensor data, and connectivity at the edge.
+            I got into software through GIS — starting at Anne Arundel CC, then a
+            CS degree and Geospatial Information Sciences minor at Maryland. At
+            UMD I built interactive campus mapping tools used by thousands of
+            students daily.
           </p>
-          <p className="mt-4">
-            Outside of work I build apps people actually use. I&apos;m working
-            on{" "}
+          <p>
+            At AWS I spent two years on the National Security Practice building
+            secure serverless geospatial APIs, ETL at scale, and reusable cloud
+            building blocks adopted across 10+ teams. I&apos;m now on Edge
+            Services, shipping control-plane APIs, encrypted data-plane paths,
+            and a central config service for edge-deployed hardware.
+          </p>
+          <p>
+            Outside the day job I&apos;m building{" "}
             <a
               href="https://app.setlistapp.org"
               target="_blank"
               rel="noreferrer"
-              className="text-[rgb(var(--foreground))] underline underline-offset-4 hover:text-brand-400"
+              className="link-underline text-[rgb(var(--fg))]"
             >
               Setlist
             </a>
-            , a live-music discovery platform, and shipped an interval timer on
-            the iOS App Store.
+            , a live-music discovery platform, and I maintain a SwiftUI interval
+            timer on the App Store.
           </p>
         </div>
-        <ul className="grid grid-cols-2 gap-3">
-          {highlights.map((h) => (
-            <li
-              key={h.label}
-              className="rounded-2xl border border-subtle bg-surface p-5"
+
+        <dl className="grid grid-cols-2 overflow-hidden rounded-xl border border-line">
+          {facts.map((f, i) => (
+            <div
+              key={f.k}
+              className={`flex flex-col justify-between gap-4 border-line p-5 ${
+                i % 2 === 0 ? "border-r" : ""
+              } ${i < facts.length - 2 ? "border-b" : ""}`}
             >
-              <div className="text-xs uppercase tracking-wider text-muted">
-                {h.label}
-              </div>
-              <div className="mt-2 text-sm font-medium">{h.value}</div>
-            </li>
+              <dt className="label">{f.k}</dt>
+              <dd className="mono text-sm">{f.v}</dd>
+            </div>
           ))}
-        </ul>
+        </dl>
       </div>
     </section>
   );
