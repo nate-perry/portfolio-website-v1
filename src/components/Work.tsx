@@ -8,6 +8,14 @@ import { experiences } from "@/data/resume";
 import { cn } from "@/lib/utils";
 import { SectionHeader } from "./SectionHeader";
 
+const rowColors = [
+  "var(--c-blue)",
+  "var(--c-violet)",
+  "var(--c-orange)",
+  "var(--c-teal)",
+  "var(--c-pink)",
+];
+
 export function Work() {
   const [open, setOpen] = useState<number | null>(0);
 
@@ -17,30 +25,44 @@ export function Work() {
       className="content-wrap mx-auto max-w-6xl px-5 py-24 sm:py-32"
     >
       <SectionHeader
-        eyebrow="work"
-        title="five roles,"
-        titleAccent="one long arc."
+        eyebrow="Work"
+        accent="var(--c-orange)"
+        title={
+          <>
+            Five roles across cloud, geospatial, and{" "}
+            <span style={{ color: "rgb(var(--c-orange))" }}>edge systems</span>.
+          </>
+        }
         description="From a UMD GIS internship to shipping edge infrastructure at AWS — each stop compounded on the last."
       />
 
-      <ul className="space-y-2">
+      <ul className="overflow-hidden rounded-2xl border border-line bg-card">
         {experiences.map((exp, i) => {
           const isOpen = open === i;
+          const color = rowColors[i % rowColors.length];
           return (
             <li
               key={`${exp.company}-${exp.start}`}
               className={cn(
-                "paper overflow-hidden rounded-3xl border border-line transition",
-                isOpen ? "border-line-strong" : "hover:border-line-strong"
+                "relative",
+                i < experiences.length - 1 ? "border-b border-line" : ""
               )}
             >
+              <span
+                aria-hidden
+                className={cn(
+                  "absolute inset-y-0 left-0 w-1 transition-opacity",
+                  isOpen ? "opacity-100" : "opacity-0"
+                )}
+                style={{ background: `rgb(${color})` }}
+              />
               <button
                 type="button"
                 onClick={() => setOpen(isOpen ? null : i)}
-                className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-5 text-left"
+                className="grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 px-5 py-5 text-left transition hover:bg-[rgb(var(--line)/0.35)]"
                 aria-expanded={isOpen}
               >
-                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-xl border border-line bg-white p-1.5">
+                <div className="relative h-11 w-11 shrink-0 overflow-hidden rounded-lg border border-line bg-white p-1.5">
                   <Image
                     src={exp.logo}
                     alt=""
@@ -51,10 +73,10 @@ export function Work() {
                 </div>
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1">
-                    <span className="text-lg font-medium">
+                    <span className="text-base font-semibold sm:text-lg">
                       {exp.company.replace(" (AWS)", "")}
                     </span>
-                    <span className="serif truncate text-base italic text-muted">
+                    <span className="truncate text-sm text-muted">
                       {exp.role}
                     </span>
                   </div>
@@ -66,9 +88,10 @@ export function Work() {
                   className={cn(
                     "flex h-8 w-8 items-center justify-center rounded-full border transition",
                     isOpen
-                      ? "border-accent bg-accent text-white"
+                      ? "border-transparent text-white"
                       : "border-line text-muted"
                   )}
+                  style={isOpen ? { background: `rgb(${color})` } : undefined}
                 >
                   {isOpen ? (
                     <Minus className="h-4 w-4" />
@@ -88,13 +111,14 @@ export function Work() {
                     transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
                     className="overflow-hidden"
                   >
-                    <div className="grid grid-cols-1 gap-6 border-t border-dashed border-line px-5 py-6 md:grid-cols-[1fr_auto]">
+                    <div className="grid grid-cols-1 gap-6 border-t border-line px-5 py-6 md:grid-cols-[1fr_auto]">
                       <ul className="space-y-3 text-sm leading-relaxed text-subtle sm:text-base">
                         {exp.bullets.map((b, idx) => (
                           <li key={idx} className="flex gap-3">
                             <span
                               aria-hidden
-                              className="mono mt-1 text-[11px] text-accent"
+                              className="mono mt-1 text-[11px]"
+                              style={{ color: `rgb(${color})` }}
                             >
                               {String(idx + 1).padStart(2, "0")}
                             </span>

@@ -1,36 +1,30 @@
 import type { ReactNode } from "react";
-import { Squiggle } from "./Doodles";
 
 export function SectionHeader({
   eyebrow,
   title,
-  titleAccent,
   description,
   children,
+  accent = "var(--c-blue)",
 }: {
   eyebrow: string;
-  title: string;
-  titleAccent?: string;
+  title: ReactNode;
   description?: string;
   children?: ReactNode;
+  accent?: string;
 }) {
   return (
-    <div className="mb-14 flex flex-col items-start gap-5">
-      <div className="inline-flex items-center gap-3">
-        <Squiggle className="h-3 w-12 text-accent" />
-        <span className="label text-accent">{eyebrow}</span>
-        <Squiggle className="h-3 w-12 text-accent" />
+    <div className="mb-12 flex flex-col items-start gap-4">
+      <div className="inline-flex items-center gap-2.5">
+        <span
+          aria-hidden
+          className="inline-block h-1.5 w-1.5 rounded-full"
+          style={{ background: `rgb(${accent})` }}
+        />
+        <span className="label">{eyebrow}</span>
       </div>
-      <h2 className="text-4xl font-semibold leading-[1.05] tracking-tight sm:text-6xl">
+      <h2 className="max-w-3xl text-3xl font-semibold leading-[1.1] tracking-tight sm:text-5xl">
         {title}
-        {titleAccent ? (
-          <>
-            {" "}
-            <span className="serif italic font-normal text-accent">
-              {titleAccent}
-            </span>
-          </>
-        ) : null}
       </h2>
       {description ? (
         <p className="max-w-2xl text-base leading-relaxed text-muted sm:text-lg">

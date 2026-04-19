@@ -7,11 +7,11 @@ import { ThemeToggle } from "./ThemeToggle";
 import { cn } from "@/lib/utils";
 
 const links = [
-  { href: "#about", label: "about" },
-  { href: "#work", label: "work" },
-  { href: "#projects", label: "play" },
-  { href: "#stack", label: "stack" },
-  { href: "#contact", label: "say hi" },
+  { href: "#about", label: "About" },
+  { href: "#work", label: "Work" },
+  { href: "#projects", label: "Projects" },
+  { href: "#stack", label: "Stack" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Navbar() {
@@ -20,7 +20,7 @@ export function Navbar() {
 
   useEffect(() => {
     setMac(navigator.platform.toLowerCase().includes("mac"));
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const onScroll = () => setScrolled(window.scrollY > 16);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
@@ -40,7 +40,7 @@ export function Navbar() {
       className={cn(
         "sticky top-0 z-40 transition-colors duration-300",
         scrolled
-          ? "border-b border-line bg-[rgb(var(--bg)/0.8)] backdrop-blur-md"
+          ? "border-b border-line bg-[rgb(var(--bg)/0.75)] backdrop-blur-md"
           : "border-b border-transparent"
       )}
     >
@@ -48,11 +48,17 @@ export function Navbar() {
         <Link href="/" className="group flex items-center gap-2.5">
           <span
             aria-hidden
-            className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white shadow-md transition group-hover:rotate-[8deg]"
+            className="relative inline-flex h-8 w-8 items-center justify-center overflow-hidden rounded-lg text-sm font-semibold text-white"
+            style={{
+              background:
+                "linear-gradient(135deg, rgb(var(--c-violet)), rgb(var(--c-blue)) 60%, rgb(var(--c-teal)))",
+            }}
           >
             N
           </span>
-          <span className="serif text-lg italic">nate perry</span>
+          <span className="text-[15px] font-semibold tracking-tight">
+            Nate Perry
+          </span>
         </Link>
 
         <nav className="hidden items-center gap-1 md:flex">
@@ -60,7 +66,7 @@ export function Navbar() {
             <a
               key={l.href}
               href={l.href}
-              className="rounded-full px-3 py-1.5 text-sm text-muted transition hover:bg-[rgb(var(--line)/0.5)] hover:text-[rgb(var(--fg))]"
+              className="rounded-md px-3 py-1.5 text-sm text-muted transition hover:bg-[rgb(var(--line)/0.5)] hover:text-[rgb(var(--fg))]"
             >
               {l.label}
             </a>
@@ -72,7 +78,7 @@ export function Navbar() {
             type="button"
             onClick={openCmd}
             aria-label="Open command menu"
-            className="hidden items-center gap-2 rounded-full border border-line bg-card px-2.5 py-1.5 text-xs text-muted transition hover:border-line-strong hover:text-[rgb(var(--fg))] sm:flex"
+            className="hidden items-center gap-2 rounded-lg border border-line bg-card px-2.5 py-1.5 text-xs text-muted transition hover:border-line-strong hover:text-[rgb(var(--fg))] sm:flex"
           >
             <Command className="h-3.5 w-3.5" />
             <kbd className="mono rounded border border-line px-1 py-0.5 text-[10px]">

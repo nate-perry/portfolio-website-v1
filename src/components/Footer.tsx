@@ -9,28 +9,36 @@ export function Footer() {
         <div className="grid grid-cols-1 items-start gap-10 md:grid-cols-[1.4fr_1fr_1fr]">
           <div>
             <div className="flex items-center gap-2.5">
-              <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-semibold text-white">
+              <span
+                aria-hidden
+                className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-sm font-semibold text-white"
+                style={{
+                  background:
+                    "linear-gradient(135deg, rgb(var(--c-violet)), rgb(var(--c-blue)) 60%, rgb(var(--c-teal)))",
+                }}
+              >
                 N
               </span>
-              <span className="serif text-lg italic">nate perry</span>
+              <span className="text-[15px] font-semibold tracking-tight">
+                Nate Perry
+              </span>
             </div>
             <p className="mt-4 max-w-sm text-xs text-muted">
-              © {year}. Made with love and caffeine in{" "}
-              <span className="serif italic">Arlington, VA</span>. Next.js +
-              Tailwind, deployed on Vercel.
+              © {year} Nathan Perry. Designed &amp; built with Next.js,
+              Tailwind, and Framer Motion. Hosted on Vercel.
             </p>
           </div>
           <div>
-            <div className="label mb-3">socials</div>
+            <div className="label mb-3">Socials</div>
             <ul className="space-y-2 text-sm text-muted">
               <li>
                 <a
                   href={profile.socials.github}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-accent"
+                  className="inline-flex items-center gap-2 hover:text-[rgb(var(--fg))]"
                 >
-                  <Github className="h-3.5 w-3.5" /> github
+                  <Github className="h-3.5 w-3.5" /> GitHub
                 </a>
               </li>
               <li>
@@ -38,30 +46,30 @@ export function Footer() {
                   href={profile.socials.linkedin}
                   target="_blank"
                   rel="noreferrer"
-                  className="inline-flex items-center gap-2 hover:text-accent"
+                  className="inline-flex items-center gap-2 hover:text-[rgb(var(--fg))]"
                 >
-                  <Linkedin className="h-3.5 w-3.5" /> linkedin
+                  <Linkedin className="h-3.5 w-3.5" /> LinkedIn
                 </a>
               </li>
               <li>
                 <a
                   href={`mailto:${profile.email}`}
-                  className="inline-flex items-center gap-2 hover:text-accent"
+                  className="inline-flex items-center gap-2 hover:text-[rgb(var(--fg))]"
                 >
-                  <Mail className="h-3.5 w-3.5" /> email
+                  <Mail className="h-3.5 w-3.5" /> Email
                 </a>
               </li>
             </ul>
           </div>
           <div>
-            <div className="label mb-3">elsewhere</div>
+            <div className="label mb-3">Elsewhere</div>
             <ul className="space-y-2 text-sm text-muted">
               <li>
                 <a
                   href={profile.rfp}
                   target="_blank"
                   rel="noreferrer"
-                  className="link-underline hover:text-[rgb(var(--fg))]"
+                  className="hover:text-[rgb(var(--fg))]"
                 >
                   rfp.nrperry.com
                 </a>
@@ -71,7 +79,7 @@ export function Footer() {
                   href={profile.geo}
                   target="_blank"
                   rel="noreferrer"
-                  className="link-underline hover:text-[rgb(var(--fg))]"
+                  className="hover:text-[rgb(var(--fg))]"
                 >
                   geo.nrperry.com
                 </a>
@@ -81,7 +89,7 @@ export function Footer() {
                   href="https://app.setlistapp.org"
                   target="_blank"
                   rel="noreferrer"
-                  className="link-underline hover:text-[rgb(var(--fg))]"
+                  className="hover:text-[rgb(var(--fg))]"
                 >
                   setlistapp.org
                 </a>
@@ -91,7 +99,7 @@ export function Footer() {
                   href="https://nterval-timer.vercel.app"
                   target="_blank"
                   rel="noreferrer"
-                  className="link-underline hover:text-[rgb(var(--fg))]"
+                  className="hover:text-[rgb(var(--fg))]"
                 >
                   interval timer (iOS)
                 </a>

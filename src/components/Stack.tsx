@@ -4,6 +4,13 @@ import { SectionHeader } from "./SectionHeader";
 const row1 = [...skills.programming, ...skills.cloud];
 const row2 = [...skills.tools, ...skills.programming.slice(0, 3)];
 
+const certColors = [
+  "var(--c-blue)",
+  "var(--c-violet)",
+  "var(--c-orange)",
+  "var(--c-teal)",
+];
+
 export function Stack() {
   return (
     <section
@@ -11,10 +18,15 @@ export function Stack() {
       className="content-wrap mx-auto max-w-6xl px-5 py-24 sm:py-32"
     >
       <SectionHeader
-        eyebrow="stack"
-        title="tools I reach"
-        titleAccent="for daily."
-        description="What I've shipped production systems with — and the certifications that back them."
+        eyebrow="Stack"
+        accent="var(--c-teal)"
+        title={
+          <>
+            The tools behind what I{" "}
+            <span style={{ color: "rgb(var(--c-teal))" }}>build</span>.
+          </>
+        }
+        description="What I've shipped production systems with — plus the certifications that back them."
       />
 
       <div className="space-y-4">
@@ -23,19 +35,24 @@ export function Stack() {
       </div>
 
       <div className="mt-14">
-        <div className="label mb-4">certifications</div>
+        <div className="label mb-4">Certifications</div>
         <ul className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
-          {certifications.map((c, i) => (
-            <li
-              key={c.name}
-              className={`dashed-card flex flex-col justify-between gap-3 p-5 transition hover:border-accent ${
-                i % 2 === 0 ? "rotate-[-0.5deg]" : "rotate-[0.5deg]"
-              }`}
-            >
-              <span className="label">{c.issuer}</span>
-              <span className="text-sm font-medium">{c.name}</span>
-            </li>
-          ))}
+          {certifications.map((c, i) => {
+            const color = certColors[i % certColors.length];
+            return (
+              <li
+                key={c.name}
+                className="rounded-2xl border border-line bg-card p-5 card-hover hover:border-line-strong"
+              >
+                <span
+                  className="inline-block h-1.5 w-6 rounded-full"
+                  style={{ background: `rgb(${color})` }}
+                />
+                <div className="label mt-4">{c.issuer}</div>
+                <div className="mt-1 text-sm font-medium">{c.name}</div>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>
@@ -51,7 +68,7 @@ function Marquee({
 }) {
   const track = [...items, ...items];
   return (
-    <div className="group paper relative overflow-hidden rounded-full border border-line py-3">
+    <div className="group relative overflow-hidden rounded-full border border-line bg-card py-3">
       <div
         className={`flex w-max gap-10 px-6 ${
           reverse ? "animate-marquee-reverse" : "animate-marquee"
@@ -69,11 +86,11 @@ function Marquee({
       </div>
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 left-0 w-16 bg-gradient-to-r from-[rgb(var(--bg))] to-transparent"
+        className="pointer-events-none absolute inset-y-0 left-0 w-20 bg-gradient-to-r from-[rgb(var(--bg))] to-transparent"
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-y-0 right-0 w-16 bg-gradient-to-l from-[rgb(var(--bg))] to-transparent"
+        className="pointer-events-none absolute inset-y-0 right-0 w-20 bg-gradient-to-l from-[rgb(var(--bg))] to-transparent"
       />
     </div>
   );

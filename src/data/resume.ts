@@ -121,6 +121,8 @@ export const education = [
   },
 ];
 
+export type ProjectColor = "blue" | "violet" | "orange" | "teal" | "amber" | "pink";
+
 export type Project = {
   name: string;
   tagline: string;
@@ -129,6 +131,7 @@ export type Project = {
   image?: string;
   tags: string[];
   featured?: boolean;
+  color: ProjectColor;
 };
 
 export const projects: Project[] = [
@@ -140,6 +143,7 @@ export const projects: Project[] = [
     href: "https://rfp.nrperry.com",
     tags: ["Next.js", "Vercel"],
     featured: true,
+    color: "violet",
   },
   {
     name: "Setlist",
@@ -149,6 +153,7 @@ export const projects: Project[] = [
     href: "https://app.setlistapp.org/",
     tags: ["Full-stack", "Live Music", "Discovery"],
     featured: true,
+    color: "orange",
   },
   {
     name: "Interval Timer",
@@ -158,6 +163,7 @@ export const projects: Project[] = [
     href: "https://nterval-timer.vercel.app/",
     image: "/images/interval_timer.png",
     tags: ["SwiftUI", "iOS"],
+    color: "pink",
   },
   {
     name: "A* Pathfinding Visualizer",
@@ -167,6 +173,7 @@ export const projects: Project[] = [
     href: "https://github.com/nate-perry",
     image: "/images/astar1.gif",
     tags: ["Python", "Pygame", "Algorithms"],
+    color: "teal",
   },
   {
     name: "Next.js Todo",
@@ -176,6 +183,7 @@ export const projects: Project[] = [
     href: "https://nextjs-todo-pied.vercel.app",
     image: "/images/todo.png",
     tags: ["Next.js", "Firebase", "Tailwind"],
+    color: "amber",
   },
 ];
 
