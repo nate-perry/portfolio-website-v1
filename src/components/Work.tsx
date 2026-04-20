@@ -126,11 +126,11 @@ export function Work() {
                         ))}
                       </ul>
                       {exp.tags?.length ? (
-                        <div className="flex flex-wrap gap-1.5 md:max-w-xs md:justify-end">
+                        <div className="flex h-fit flex-wrap content-start gap-1.5 md:max-w-xs md:justify-end md:self-start">
                           {exp.tags.map((t) => (
                             <span
                               key={t}
-                              className="rounded-full border border-line bg-soft px-2.5 py-1 text-[11px] text-muted"
+                              className="inline-flex items-center rounded-full border border-line bg-soft px-2.5 py-1 text-[11px] leading-none text-muted"
                             >
                               {t}
                             </span>

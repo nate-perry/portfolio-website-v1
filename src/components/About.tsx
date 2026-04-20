@@ -6,7 +6,6 @@ const facts = [
   { k: "Base", v: "Arlington, VA", c: "var(--c-teal)" },
   { k: "Focus", v: "Cloud · Edge · GIS", c: "var(--c-orange)" },
   { k: "Studied", v: "UMD · CS + GIS", c: "var(--c-pink)" },
-  { k: "Status", v: "Open to collab", c: "var(--c-amber)" },
 ];
 
 export function About() {
