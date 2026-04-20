@@ -146,12 +146,12 @@ export const projects: Project[] = [
     color: "violet",
   },
   {
-    name: "Geo",
+    name: "GeoIntel",
     tagline: "geo.nrperry.com",
     description:
-      "A personal project at geo.nrperry.com — more details coming soon.",
+      "AI-generated analyst briefs for any point on Earth — streaming OpenStreetMap, USGS, Census, and Open-Meteo data through Claude, with live data-fetch and generation progress over SSE.",
     href: "https://geo.nrperry.com",
-    tags: ["Geospatial", "Vercel"],
+    tags: ["Next.js", "Mapbox", "Claude", "SSE"],
     featured: true,
     color: "teal",
   },
