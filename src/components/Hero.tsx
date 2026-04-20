@@ -62,30 +62,11 @@ export function Hero() {
 
       <div className="content-wrap mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 px-5 pb-24 pt-16 md:grid-cols-[1.25fr_1fr] md:pt-24">
         <div>
-          <motion.div
-            initial={{ opacity: 0, y: 10 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-3 py-1 text-xs"
-          >
-            <span className="relative inline-flex h-1.5 w-1.5">
-              <span
-                className="absolute inline-flex h-full w-full animate-ping rounded-full opacity-70"
-                style={{ background: "rgb(var(--c-lime))" }}
-              />
-              <span
-                className="relative inline-flex h-1.5 w-1.5 rounded-full"
-                style={{ background: "rgb(var(--c-lime))" }}
-              />
-            </span>
-            <span className="text-subtle">Available for side projects</span>
-          </motion.div>
-
           <motion.h1
             initial={{ opacity: 0, y: 14 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.05 }}
-            className="mt-6 text-display font-semibold"
+            className="text-display font-semibold"
           >
             Nate Perry
           </motion.h1>

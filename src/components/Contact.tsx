@@ -34,9 +34,6 @@ export function Contact() {
           </span>{" "}
           something.
         </h2>
-        <p className="mt-6 max-w-xl text-lg text-muted">
-          Open to side projects and collabs. I reply within a day.
-        </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
           <a
@@ -49,32 +46,6 @@ export function Contact() {
           >
             {profile.email}
             <ArrowUpRight className="h-4 w-4 transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-          </a>
-          <a
-            href={profile.rfp}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-4 py-2.5 text-sm transition hover:border-line-strong"
-          >
-            <span
-              className="inline-block h-2 w-2 rounded-full"
-              style={{ background: "rgb(var(--c-violet))" }}
-            />
-            <span className="font-medium">RFP Radar</span>
-            <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
-          </a>
-          <a
-            href={profile.geo}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-2 rounded-full border border-line bg-card px-4 py-2.5 text-sm transition hover:border-line-strong"
-          >
-            <span
-              className="inline-block h-2 w-2 rounded-full"
-              style={{ background: "rgb(var(--c-teal))" }}
-            />
-            <span className="font-medium">GeoIntel</span>
-            <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
           </a>
         </div>
       </div>
