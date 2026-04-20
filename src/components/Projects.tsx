@@ -27,19 +27,35 @@ export function Projects() {
         }
       />
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
-        {featured.map((p) => (
-          <FeaturedCard key={p.name} project={p} />
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-6">
+        {featured.map((p, i) => (
+          <FeaturedCard
+            key={p.name}
+            project={p}
+            className={
+              featured.length === 2
+                ? i === 0
+                  ? "md:col-span-4"
+                  : "md:col-span-2"
+                : "md:col-span-2"
+            }
+          />
         ))}
         {rest.map((p) => (
-          <MiniCard key={p.name} project={p} />
+          <MiniCard key={p.name} project={p} className="md:col-span-2" />
         ))}
       </div>
     </section>
   );
 }
 
-function FeaturedCard({ project }: { project: (typeof projects)[number] }) {
+function FeaturedCard({
+  project,
+  className,
+}: {
+  project: (typeof projects)[number];
+  className?: string;
+}) {
   const color = colorVar[project.color];
   return (
     <motion.a
@@ -51,57 +67,93 @@ function FeaturedCard({ project }: { project: (typeof projects)[number] }) {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group card-hover relative flex min-h-[320px] flex-col justify-between overflow-hidden rounded-2xl border border-line bg-card p-6 hover:border-line-strong"
+        "group card-hover relative flex flex-col overflow-hidden rounded-2xl border border-line bg-card hover:border-line-strong",
+        className
       )}
     >
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-70 transition-opacity group-hover:opacity-100"
-        style={{
-          background: `radial-gradient(ellipse 80% 60% at 15% 0%, rgb(${color} / 0.22), transparent 65%)`,
-        }}
-      />
-
-      <div className="relative z-[1] flex items-start justify-between">
-        <span
-          className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium text-white"
-          style={{ background: `rgb(${color})` }}
-        >
-          <span className="h-1.5 w-1.5 rounded-full bg-white/90" />
-          Featured
-        </span>
-        <ArrowUpRight className="h-5 w-5 text-muted transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
-      </div>
-
-      <div className="relative z-[1] mt-10">
+      {project.image ? (
         <div
-          className="mono text-xs font-medium"
-          style={{ color: `rgb(${color})` }}
+          className="relative aspect-[16/9] w-full overflow-hidden border-b border-line"
+          style={{
+            background: `linear-gradient(135deg, rgb(${color} / 0.1), rgb(${color} / 0.02))`,
+          }}
         >
-          {project.tagline}
+          <Image
+            src={project.image}
+            alt={`${project.name} preview`}
+            fill
+            className="object-cover transition duration-500 group-hover:scale-[1.02]"
+            sizes="(max-width: 768px) 100vw, 66vw"
+          />
+          <span
+            className="absolute left-4 top-4 inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium text-white shadow-sm"
+            style={{ background: `rgb(${color})` }}
+          >
+            <span className="h-1.5 w-1.5 rounded-full bg-white/90" />
+            Featured
+          </span>
+          <ArrowUpRight className="absolute right-4 top-4 h-5 w-5 text-white drop-shadow transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
         </div>
-        <h3 className="mt-2 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
-          {project.name}
-        </h3>
-        <p className="mt-3 text-sm leading-relaxed text-subtle">
-          {project.description}
-        </p>
-        <div className="mt-5 flex flex-wrap gap-1.5">
-          {project.tags.map((t) => (
+      ) : (
+        <div
+          aria-hidden
+          className="pointer-events-none absolute inset-0 opacity-70 transition-opacity group-hover:opacity-100"
+          style={{
+            background: `radial-gradient(ellipse 80% 60% at 15% 0%, rgb(${color} / 0.22), transparent 65%)`,
+          }}
+        />
+      )}
+
+      <div className="relative z-[1] flex flex-1 flex-col p-6">
+        {!project.image && (
+          <div className="flex items-start justify-between">
             <span
-              key={t}
-              className="rounded-full border border-line bg-[rgb(var(--bg)/0.6)] px-2.5 py-1 text-[11px] text-muted backdrop-blur"
+              className="inline-flex items-center gap-1.5 rounded-full px-2.5 py-1 text-[11px] font-medium text-white"
+              style={{ background: `rgb(${color})` }}
             >
-              {t}
+              <span className="h-1.5 w-1.5 rounded-full bg-white/90" />
+              Featured
             </span>
-          ))}
+            <ArrowUpRight className="h-5 w-5 text-muted transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+          </div>
+        )}
+
+        <div className={!project.image ? "mt-10" : ""}>
+          <div
+            className="mono text-xs font-medium"
+            style={{ color: `rgb(${color})` }}
+          >
+            {project.tagline}
+          </div>
+          <h3 className="mt-2 text-2xl font-semibold leading-tight tracking-tight sm:text-3xl">
+            {project.name}
+          </h3>
+          <p className="mt-3 text-sm leading-relaxed text-subtle">
+            {project.description}
+          </p>
+          <div className="mt-5 flex flex-wrap gap-1.5">
+            {project.tags.map((t) => (
+              <span
+                key={t}
+                className="inline-flex items-center rounded-full border border-line bg-[rgb(var(--bg)/0.6)] px-2.5 py-1 text-[11px] leading-none text-muted backdrop-blur"
+              >
+                {t}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </motion.a>
   );
 }
 
-function MiniCard({ project }: { project: (typeof projects)[number] }) {
+function MiniCard({
+  project,
+  className,
+}: {
+  project: (typeof projects)[number];
+  className?: string;
+}) {
   const color = colorVar[project.color];
   return (
     <motion.a
@@ -113,7 +165,8 @@ function MiniCard({ project }: { project: (typeof projects)[number] }) {
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group card-hover flex flex-col overflow-hidden rounded-2xl border border-line bg-card hover:border-line-strong"
+        "group card-hover flex flex-col overflow-hidden rounded-2xl border border-line bg-card hover:border-line-strong",
+        className
       )}
     >
       {project.image ? (
@@ -169,7 +222,7 @@ function MiniCard({ project }: { project: (typeof projects)[number] }) {
           {project.tags.map((t) => (
             <span
               key={t}
-              className="rounded-full border border-line bg-soft px-2 py-0.5 text-[11px] text-muted"
+              className="inline-flex items-center rounded-full border border-line bg-soft px-2 py-0.5 text-[11px] leading-none text-muted"
             >
               {t}
             </span>

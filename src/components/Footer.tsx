@@ -85,17 +85,7 @@ export function Footer() {
               </li>
               <li>
                 <a
-                  href="https://app.setlistapp.org"
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-[rgb(var(--fg))]"
-                >
-                  setlistapp.org
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://nterval-timer.vercel.app"
+                  href="https://interval.nrperry.com"
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-[rgb(var(--fg))]"

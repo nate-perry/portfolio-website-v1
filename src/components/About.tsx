@@ -46,15 +46,6 @@ export function About() {
           <p className="mt-4">
             On the side I&apos;m building{" "}
             <a
-              href="https://app.setlistapp.org"
-              target="_blank"
-              rel="noreferrer"
-              className="font-medium text-[rgb(var(--fg))] underline decoration-[rgb(var(--c-orange))] decoration-2 underline-offset-4"
-            >
-              Setlist
-            </a>
-, plus{" "}
-            <a
               href="https://rfp.nrperry.com"
               target="_blank"
               rel="noreferrer"
