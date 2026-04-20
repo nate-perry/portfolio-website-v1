@@ -24,8 +24,7 @@ export function Footer() {
               </span>
             </div>
             <p className="mt-4 max-w-sm text-xs text-muted">
-              © {year} Nathan Perry. Designed &amp; built with Next.js,
-              Tailwind, and Framer Motion. Hosted on Vercel.
+              © {year} · Next.js &amp; Vercel.
             </p>
           </div>
           <div>
@@ -71,7 +70,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="hover:text-[rgb(var(--fg))]"
                 >
-                  rfp.nrperry.com
+                  RFP Radar
                 </a>
               </li>
               <li>
@@ -81,7 +80,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="hover:text-[rgb(var(--fg))]"
                 >
-                  geo.nrperry.com
+                  GeoIntel
                 </a>
               </li>
               <li>

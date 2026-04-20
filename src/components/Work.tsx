@@ -29,11 +29,10 @@ export function Work() {
         accent="var(--c-orange)"
         title={
           <>
-            Five roles across cloud, geospatial, and{" "}
-            <span style={{ color: "rgb(var(--c-orange))" }}>edge systems</span>.
+            Five roles,{" "}
+            <span style={{ color: "rgb(var(--c-orange))" }}>one arc</span>.
           </>
         }
-        description="From a UMD GIS internship to shipping edge infrastructure at AWS — each stop compounded on the last."
       />
 
       <ul className="overflow-hidden rounded-2xl border border-line bg-card">

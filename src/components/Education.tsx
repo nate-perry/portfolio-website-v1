@@ -14,9 +14,7 @@ export function Education() {
         accent="var(--c-amber)"
         title={
           <>
-            The{" "}
-            <span style={{ color: "rgb(var(--c-amber))" }}>classroom</span>{" "}
-            years.
+            <span style={{ color: "rgb(var(--c-amber))" }}>School</span>.
           </>
         }
       />

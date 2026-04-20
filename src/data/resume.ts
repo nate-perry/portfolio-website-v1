@@ -7,7 +7,7 @@ export const profile = {
   email: "nathanperry@randdgroup.com",
   phone: "443-377-2222",
   summary:
-    "Software engineer at AWS working on Edge Services, with a background in cloud, geospatial, and secure distributed systems. I like building scalable infrastructure, well-designed APIs, and shipping products that people actually use.",
+    "Software engineer at AWS building cloud & edge systems.",
   socials: {
     github: "https://github.com/nate-perry",
     linkedin: "https://www.linkedin.com/in/nathanperry443/",
@@ -136,14 +136,24 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "RFP",
+    name: "RFP Radar",
     tagline: "rfp.nrperry.com",
     description:
-      "A personal project at rfp.nrperry.com — more details coming soon. Reach out if you want an early look.",
+      "AI SaaS that scans SAM.gov daily for small government contractors — scoring solicitations against your capability profile with Claude and delivering a ranked morning brief with summaries, risk flags, and deep-dive analysis.",
     href: "https://rfp.nrperry.com",
-    tags: ["Next.js", "Vercel"],
+    tags: ["Next.js", "Supabase", "Claude", "SaaS"],
     featured: true,
     color: "violet",
+  },
+  {
+    name: "GeoIntel",
+    tagline: "geo.nrperry.com",
+    description:
+      "AI-generated analyst briefs for any point on Earth — streaming OpenStreetMap, USGS, Census, and Open-Meteo data through Claude, with live data-fetch and generation progress over SSE.",
+    href: "https://geo.nrperry.com",
+    tags: ["Next.js", "Mapbox", "Claude", "SSE"],
+    featured: true,
+    color: "teal",
   },
   {
     name: "Setlist",
@@ -173,7 +183,7 @@ export const projects: Project[] = [
     href: "https://github.com/nate-perry",
     image: "/images/astar1.gif",
     tags: ["Python", "Pygame", "Algorithms"],
-    color: "teal",
+    color: "blue",
   },
   {
     name: "Next.js Todo",

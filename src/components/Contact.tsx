@@ -19,7 +19,7 @@ export function Contact() {
       <div className="relative mx-auto max-w-6xl px-5 py-28 sm:py-36">
         <div className="label">Contact</div>
         <h2 className="mt-4 text-4xl font-semibold leading-[1.05] tracking-tight sm:text-7xl">
-          Have something fun{" "}
+          Let&apos;s{" "}
           <span
             style={{
               background:
@@ -30,12 +30,12 @@ export function Contact() {
               color: "transparent",
             }}
           >
-            to build?
-          </span>
+            build
+          </span>{" "}
+          something.
         </h2>
         <p className="mt-6 max-w-xl text-lg text-muted">
-          Always down to chat — side projects, weird ideas, or just to say hi.
-          I try to reply within a day.
+          Open to side projects and collabs. I reply within a day.
         </p>
 
         <div className="mt-10 flex flex-wrap items-center gap-4">
@@ -60,7 +60,7 @@ export function Contact() {
               className="inline-block h-2 w-2 rounded-full"
               style={{ background: "rgb(var(--c-violet))" }}
             />
-            rfp.nrperry.com
+            <span className="font-medium">RFP Radar</span>
             <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
           </a>
           <a
@@ -73,7 +73,7 @@ export function Contact() {
               className="inline-block h-2 w-2 rounded-full"
               style={{ background: "rgb(var(--c-teal))" }}
             />
-            geo.nrperry.com
+            <span className="font-medium">GeoIntel</span>
             <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
           </a>
         </div>

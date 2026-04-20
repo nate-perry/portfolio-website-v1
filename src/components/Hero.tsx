@@ -98,8 +98,7 @@ export function Hero() {
           >
             Software engineer at{" "}
             <span className="font-medium text-[rgb(var(--fg))]">AWS</span>{" "}
-            working on Edge Services. I build scalable cloud infrastructure,
-            secure distributed systems, and the occasional iOS app.
+            building cloud &amp; edge systems.
           </motion.p>
 
           <motion.div
@@ -125,7 +124,7 @@ export function Hero() {
                 className="inline-block h-2 w-2 rounded-full"
                 style={{ background: "rgb(var(--c-violet))" }}
               />
-              rfp.nrperry.com
+              <span className="font-medium">RFP Radar</span>
               <ArrowUpRight className="h-3.5 w-3.5 text-muted transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
             <a
@@ -138,7 +137,7 @@ export function Hero() {
                 className="inline-block h-2 w-2 rounded-full"
                 style={{ background: "rgb(var(--c-teal))" }}
               />
-              geo.nrperry.com
+              <span className="font-medium">GeoIntel</span>
               <ArrowUpRight className="h-3.5 w-3.5 text-muted transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </motion.div>
