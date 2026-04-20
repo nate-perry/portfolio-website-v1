@@ -70,7 +70,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="hover:text-[rgb(var(--fg))]"
                 >
-                  rfp.nrperry.com
+                  RFP Radar
                 </a>
               </li>
               <li>
@@ -80,7 +80,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="hover:text-[rgb(var(--fg))]"
                 >
-                  geo.nrperry.com
+                  GeoIntel
                 </a>
               </li>
               <li>

@@ -72,7 +72,7 @@ export function CommandPalette() {
       {
         id: "ext-rfp",
         group: "Links",
-        label: "Open rfp.nrperry.com",
+        label: "Open RFP Radar",
         icon: Sparkles,
         run: openUrl(profile.rfp),
         external: true,
@@ -80,7 +80,7 @@ export function CommandPalette() {
       {
         id: "ext-geo",
         group: "Links",
-        label: "Open geo.nrperry.com",
+        label: "Open GeoIntel",
         icon: Sparkles,
         run: openUrl(profile.geo),
         external: true,

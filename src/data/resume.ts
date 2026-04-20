@@ -136,12 +136,12 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    name: "RFP",
+    name: "RFP Radar",
     tagline: "rfp.nrperry.com",
     description:
-      "A personal project at rfp.nrperry.com — more details coming soon. Reach out if you want an early look.",
+      "AI SaaS that scans SAM.gov daily for small government contractors — scoring solicitations against your capability profile with Claude and delivering a ranked morning brief with summaries, risk flags, and deep-dive analysis.",
     href: "https://rfp.nrperry.com",
-    tags: ["Next.js", "Vercel"],
+    tags: ["Next.js", "Supabase", "Claude", "SaaS"],
     featured: true,
     color: "violet",
   },

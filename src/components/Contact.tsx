@@ -60,7 +60,7 @@ export function Contact() {
               className="inline-block h-2 w-2 rounded-full"
               style={{ background: "rgb(var(--c-violet))" }}
             />
-            rfp.nrperry.com
+            <span className="font-medium">RFP Radar</span>
             <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
           </a>
           <a
@@ -73,7 +73,7 @@ export function Contact() {
               className="inline-block h-2 w-2 rounded-full"
               style={{ background: "rgb(var(--c-teal))" }}
             />
-            geo.nrperry.com
+            <span className="font-medium">GeoIntel</span>
             <ArrowUpRight className="h-3.5 w-3.5 text-muted" />
           </a>
         </div>

@@ -54,14 +54,14 @@ export function About() {
             >
               Setlist
             </a>
-            , plus{" "}
+, plus{" "}
             <a
               href="https://rfp.nrperry.com"
               target="_blank"
               rel="noreferrer"
               className="font-medium text-[rgb(var(--fg))] underline decoration-[rgb(var(--c-violet))] decoration-2 underline-offset-4"
             >
-              rfp
+              RFP Radar
             </a>{" "}
             and{" "}
             <a
@@ -70,7 +70,7 @@ export function About() {
               rel="noreferrer"
               className="font-medium text-[rgb(var(--fg))] underline decoration-[rgb(var(--c-teal))] decoration-2 underline-offset-4"
             >
-              geo
+              GeoIntel
             </a>
             .
           </p>
