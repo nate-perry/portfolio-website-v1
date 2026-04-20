@@ -8,11 +8,8 @@ import { SectionHeader } from "./SectionHeader";
 import { cn, colorVar } from "@/lib/utils";
 
 export function Projects() {
-  const rfp = projects.find((p) => p.name === "RFP");
-  const setlist = projects.find((p) => p.name === "Setlist");
-  const rest = projects.filter(
-    (p) => p.name !== "RFP" && p.name !== "Setlist"
-  );
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
 
   return (
     <section
@@ -30,26 +27,19 @@ export function Projects() {
         }
       />
 
-      <div className="grid grid-cols-1 gap-5 md:grid-cols-6">
-        {rfp ? <FeaturedCard project={rfp} className="md:col-span-4" /> : null}
-        {setlist ? (
-          <FeaturedCard project={setlist} className="md:col-span-2" />
-        ) : null}
+      <div className="grid grid-cols-1 gap-5 md:grid-cols-3">
+        {featured.map((p) => (
+          <FeaturedCard key={p.name} project={p} />
+        ))}
         {rest.map((p) => (
-          <MiniCard key={p.name} project={p} className="md:col-span-2" />
+          <MiniCard key={p.name} project={p} />
         ))}
       </div>
     </section>
   );
 }
 
-function FeaturedCard({
-  project,
-  className,
-}: {
-  project: (typeof projects)[number];
-  className?: string;
-}) {
+function FeaturedCard({ project }: { project: (typeof projects)[number] }) {
   const color = colorVar[project.color];
   return (
     <motion.a
@@ -61,8 +51,7 @@ function FeaturedCard({
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group card-hover relative flex min-h-[340px] flex-col justify-between overflow-hidden rounded-2xl border border-line bg-card p-7 hover:border-line-strong",
-        className
+        "group card-hover relative flex min-h-[320px] flex-col justify-between overflow-hidden rounded-2xl border border-line bg-card p-6 hover:border-line-strong"
       )}
     >
       <div
@@ -81,10 +70,7 @@ function FeaturedCard({
           <span className="h-1.5 w-1.5 rounded-full bg-white/90" />
           Featured
         </span>
-        <ArrowUpRight
-          className="h-5 w-5 text-muted transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-          style={{ color: undefined }}
-        />
+        <ArrowUpRight className="h-5 w-5 text-muted transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
       </div>
 
       <div className="relative z-[1] mt-10">
@@ -94,10 +80,10 @@ function FeaturedCard({
         >
           {project.tagline}
         </div>
-        <h3 className="mt-2 text-3xl font-semibold leading-tight tracking-tight sm:text-5xl">
+        <h3 className="mt-2 text-3xl font-semibold leading-tight tracking-tight sm:text-4xl">
           {project.name}
         </h3>
-        <p className="mt-3 max-w-md text-sm leading-relaxed text-subtle sm:text-base">
+        <p className="mt-3 text-sm leading-relaxed text-subtle">
           {project.description}
         </p>
         <div className="mt-5 flex flex-wrap gap-1.5">
@@ -115,13 +101,7 @@ function FeaturedCard({
   );
 }
 
-function MiniCard({
-  project,
-  className,
-}: {
-  project: (typeof projects)[number];
-  className?: string;
-}) {
+function MiniCard({ project }: { project: (typeof projects)[number] }) {
   const color = colorVar[project.color];
   return (
     <motion.a
@@ -133,8 +113,7 @@ function MiniCard({
       viewport={{ once: true, margin: "-80px" }}
       transition={{ duration: 0.45, ease: [0.22, 1, 0.36, 1] }}
       className={cn(
-        "group card-hover flex flex-col overflow-hidden rounded-2xl border border-line bg-card hover:border-line-strong",
-        className
+        "group card-hover flex flex-col overflow-hidden rounded-2xl border border-line bg-card hover:border-line-strong"
       )}
     >
       {project.image ? (

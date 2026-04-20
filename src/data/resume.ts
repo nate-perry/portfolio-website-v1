@@ -146,6 +146,16 @@ export const projects: Project[] = [
     color: "violet",
   },
   {
+    name: "Geo",
+    tagline: "geo.nrperry.com",
+    description:
+      "A personal project at geo.nrperry.com — more details coming soon.",
+    href: "https://geo.nrperry.com",
+    tags: ["Geospatial", "Vercel"],
+    featured: true,
+    color: "teal",
+  },
+  {
     name: "Setlist",
     tagline: "app.setlistapp.org",
     description:
@@ -173,7 +183,7 @@ export const projects: Project[] = [
     href: "https://github.com/nate-perry",
     image: "/images/astar1.gif",
     tags: ["Python", "Pygame", "Algorithms"],
-    color: "teal",
+    color: "blue",
   },
   {
     name: "Next.js Todo",
