@@ -141,6 +141,7 @@ export const projects: Project[] = [
     description:
       "AI SaaS that scans SAM.gov daily for small government contractors — scoring solicitations against your capability profile with Claude and delivering a ranked morning brief with summaries, risk flags, and deep-dive analysis.",
     href: "https://rfp.nrperry.com",
+    image: "/images/rfp-radar.png",
     tags: ["Next.js", "Supabase", "Claude", "SaaS"],
     featured: true,
     color: "violet",
@@ -151,26 +152,28 @@ export const projects: Project[] = [
     description:
       "AI-generated analyst briefs for any point on Earth — streaming OpenStreetMap, USGS, Census, and Open-Meteo data through Claude, with live data-fetch and generation progress over SSE.",
     href: "https://geo.nrperry.com",
+    image: "/images/geointel.png",
     tags: ["Next.js", "Mapbox", "Claude", "SSE"],
     featured: true,
     color: "teal",
   },
-  {
-    name: "Setlist",
-    tagline: "app.setlistapp.org",
-    description:
-      "A live-music discovery platform helping fans find local shows and artists share events, replacing fragmented sources like venue pages and social media.",
-    href: "https://app.setlistapp.org/",
-    tags: ["Full-stack", "Live Music", "Discovery"],
-    featured: true,
-    color: "orange",
-  },
+  // Setlist is temporarily offline — hide from portfolio for now.
+  // {
+  //   name: "Setlist",
+  //   tagline: "app.setlistapp.org",
+  //   description:
+  //     "A live-music discovery platform helping fans find local shows and artists share events, replacing fragmented sources like venue pages and social media.",
+  //   href: "https://app.setlistapp.org/",
+  //   tags: ["Full-stack", "Live Music", "Discovery"],
+  //   featured: true,
+  //   color: "orange",
+  // },
   {
     name: "Interval Timer",
     tagline: "iOS App Store · 5★",
     description:
       "SwiftUI interval timer featuring clean, animated progress graphics. Published on the App Store with a 5-star rating.",
-    href: "https://nterval-timer.vercel.app/",
+    href: "https://interval.nrperry.com",
     image: "/images/interval_timer.png",
     tags: ["SwiftUI", "iOS"],
     color: "pink",
